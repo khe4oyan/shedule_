@@ -1,0 +1,25 @@
+.root {
+  margin-top: 2rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.button {
+  padding: 15px 0;
+  margin: 10px 0;
+  border-color: var(--primaryColor_2);
+}
+
+.buttonActive {
+  border-color: var(--primaryColor_4);
+}
+
+.lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

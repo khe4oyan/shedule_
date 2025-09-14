@@ -1,0 +1,77 @@
+.root { 
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+    "top top"
+    "left right";
+  gap: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--lessonBorderColor);
+  background: var(--lessonBg);
+}
+
+.rootCurrent {
+  grid-template-areas: 
+    "top top"
+    "left right"
+    "bottom bottom";
+}
+
+/* .rootCompleted {} */
+
+.mainInfo {
+  grid-area: top;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--lessonBorderColor);
+  padding-bottom: 5px;
+  /* text-wrap: balance; */
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.details {
+  grid-area: left;
+}
+
+.time {
+  grid-area: right;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--lessonDetailsBorderColor);
+  height: fit-content;
+
+  & > p:nth-child(1),
+  & > p:nth-child(2) {
+    font-weight: bold;
+    border-bottom: 1px dashed var(--lessonDetailsTimeBorderColor);
+    padding-bottom: 5px;
+  }
+
+  & > p:nth-child(3),
+  & > p:nth-child(4) {
+    padding-top: 5px;
+  }
+
+  & > p:nth-child(1),
+  & > p:nth-child(3) {
+    padding-right: 5px;
+  }
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0 5px;
+  margin-top: 5px;
+  grid-area: bottom;
+  border-top: 1px dashed var(--lessonTimerBorderColor);
+}

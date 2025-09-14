@@ -1,0 +1,51 @@
+.root {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--themeBg);
+  border-top: 2px solid var(--themeBorderColor);
+  align-items: center;
+}
+
+.themeButton {
+  --size: 70px;
+  width: var(--size);
+  height: var(--size);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--themeButtonBg);
+  border: 1px solid var(--themeBorderColor);
+}
+
+.menu {
+  position: fixed;
+  bottom: 6.1rem;
+  right: 24px;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  background: var(--themeMenuBg);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 87%;
+  width: fit-content;
+  gap: 10px;
+  border: 1px solid var(--primaryColor_3);
+}
+
+.theme {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 2px solid var(--primaryColor_1);
+  background: linear-gradient(135deg, var(--primaryColor_2) 50%, var(--primaryColor_3) 51%);
+}

@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: center;
+  flex-direction: column;
+  height: 150px;
+  gap: 10px;
+  background: var(--breakBg);
+  border: 1px solid var(--breakBorderColor);
+  color: var(--breakColor);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}

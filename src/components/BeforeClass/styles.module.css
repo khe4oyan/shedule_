@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+  gap: 20px;
+
+  background: var(--beforeClassBg);
+  color: var(--beforeClassColor);
+  border: 2px solid var(--beforeClassBorderColor);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  max-inline-size: 10rem;
+  text-align: center;
+  text-wrap: balance;
+}

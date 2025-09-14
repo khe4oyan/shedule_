@@ -1,0 +1,19 @@
+.root {}
+
+.message {
+  background: var(--afterClassBg);
+  color: var(--afterClassColor);
+  border: 2px solid var(--afterClassBorderColor);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  height: 40vh;
+
+  text-align: center;
+  text-wrap: balance;
+}
+
