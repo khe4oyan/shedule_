@@ -14,12 +14,12 @@ export default function ShowWeekLessons() {
   const [daySheduleNum, setDaySheduleNum] = useState(() => {
     const dayNum = new Date().getDay() - 1;
       
-    if ( dayNum < 0 || dayNum > 4) return -1;
+    if ( dayNum < 0 || dayNum > 5) return -1;
 
     return dayNum;
   });
 
-  const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
     <div className={classes.root}>
