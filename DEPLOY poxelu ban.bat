@@ -6,9 +6,9 @@ git push
 npm run deploy
 
 cls
-echo ■────────────────────┐
-echo | Vsyo, karas pakes  |
-echo └────────────────────■
+echo "■────────────────────┐"
+echo "| Vsyo, karas pakes  |"
+echo "└────────────────────■"
 echo ""
 echo ""
 echo ""
