@@ -31,21 +31,19 @@ const scenarioStatuses = {
 export default function Lessons() {
   const [appStatus, setAppStatus] = useState(scenarioStatuses.lesson);
   const [filteredLessons, setFilteredLessons] = useState([]);
-
-  const calculateDayShedule = (inputRes) => {
+  
+  const calculateDayschedule = (inputRes) => {
     const result = [...inputRes];
     const currentDate = new Date();
     const currentTime = currentDate.getTime();
 
     for (let i = 0; i < result.length; ++i) {
-
-      const lesson = result[i];
+      const lesson = result[i].getData();
       const startTime = getDateTime(lesson.start);
       const endTime = getDateTime(lesson.end);
 
       // check before class start
       if (currentTime < startTime) {
-
         // check firts lesson
         if (i === 0) {
           setAppStatus(scenarioStatuses.beforeClass);
@@ -74,19 +72,22 @@ export default function Lessons() {
     setFilteredLessons(result);
   }
 
-  const initShedule = (inputLessons) => {
+  const initschedule = (inputLessons) => {
     const result = filterLessons(inputLessons);
-    console.log(result);
-    
+
     if (result) {
-      calculateDayShedule(result);
+      calculateDayschedule(result);
     } else {
       setAppStatus(scenarioStatuses.weekend);
     }
   }
 
   useEffect(() => {
-    initShedule(lessons);
+    initschedule(lessons);
+
+    window.addEventListener("focus", () => {
+      initschedule(lessons);
+    });
   }, []);
 
   useEffect(() => {
@@ -99,7 +100,7 @@ export default function Lessons() {
     const msUntilNextMinute = 60000 - (now.getSeconds() * 1000 + now.getMilliseconds());
 
     const timeoutId = setTimeout(() => {
-      calculateDayShedule(filteredLessons);
+      calculateDayschedule(filteredLessons);
     }, msUntilNextMinute);
 
     // Чистим оба таймера при размонтировании
@@ -111,7 +112,7 @@ export default function Lessons() {
   return (
     <div className={classes.root}>
       {appStatus === scenarioStatuses.weekend && <Weekend />}
-      {appStatus === scenarioStatuses.beforeClass && <BeforeClass startedTime={filteredLessons[0].start} />}
+      {appStatus === scenarioStatuses.beforeClass && <BeforeClass startedTime={filteredLessons[0]?.getData()?.start} />}
       {appStatus === scenarioStatuses.afterClass &&
         <>
           <AfterClass />
@@ -128,16 +129,18 @@ export default function Lessons() {
         ) &&
         <>
           {
-            filteredLessons.filter((lessonData) => lessonData.status !== lessonStatuses.COMPLETED)
+            filteredLessons.filter((lessonData) => lessonData.getData().status !== lessonStatuses.COMPLETED)
               .map((lessonData, ind) =>
                 <Lesson
                   key={`${ind} ${JSON.stringify(lessonData)}`}
-                  data={lessonData}
+                  data={lessonData.getData()}
                 />
               )
           }
 
-          <CompletedLessons filteredLessons={filteredLessons} />
+          <CompletedLessons 
+            filteredLessons={filteredLessons} 
+          />
         </>
       }
 
@@ -146,17 +149,17 @@ export default function Lessons() {
   )
 }
 
-function CompletedLessons({ filteredLessons }) {
+function CompletedLessons({ filteredLessons, isTopLesson }) {
   return (
     <details className={classes.completedLessons}>
-      <summary>completed lessons</summary>
+      <summary>ավարտված դասերը</summary>
       <div className={classes.completedLessonsList}>
         {
           filteredLessons.filter((lessonData) => lessonData.status === lessonStatuses.COMPLETED)
             .map((lessonData, ind) =>
               <Lesson
                 key={`${ind} ${JSON.stringify(lessonData)}`}
-                data={lessonData}
+                data={lessonData.getData(isTopLesson)}
               />
             )
         }

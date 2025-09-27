@@ -16,24 +16,24 @@
   list-style-type: '';
   background: var(--completeLessonsBg);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .completedLessons summary::before {
-  content: "Show ";
+  content: "Ցույց տալ ";
 }
 
 .completedLessons[open] summary {
   /* margin-bottom: 5px; */
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 .completedLessons[open] summary::before {
-  content: "Hide ";
+  content: "Թաքցնել ";
 }
 
 .completedLessonsList {
-  padding: 5px;
+  padding: 8px;
   background: var(--completeLessonsListBg);
   border-top: 0;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
 }
