@@ -19,7 +19,7 @@ button {
   border: 1px solid var(--buttonInitBorderColor);
   color: var(--primaryColor_4);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   background: var(--buttonInitBgColor);
 }
 
@@ -30,6 +30,7 @@ button:disabled {
 }
 
 .colors_default {
+  /* primary colors */
   --primaryColor_1: white;
   --primaryColor_2: #dddddd;
   --primaryColor_3: #9b9b9b;
@@ -37,48 +38,65 @@ button:disabled {
 
   --bodyBackground: #f2f2f2;
 
+  /* button */
   --buttonInitBgColor: var(--primaryColor_1);
-  --buttonInitBorderColor: rgb(180, 180, 180);
+  --buttonInitBorderColor: #b4b4b4;
 
   --buttonDisabledBorderColor: #bebebe;
   --buttonDisabledColor: #8a8a8a;
   --buttonDisabledBgColor: var(--primaryColor_2);
 
+  /* header */
   --headerBg: var(--primaryColor_1);
   --headerBorderColor: var(--primaryColor_2);
   --headerBetaBgColor: #0dacac;
   --headerBetaColor: var(--primaryColor_1);
 
+  /* complete lessons */
   --completeLessonsBg: var(--primaryColor_2);
   --completeLessonsListBg: var(--primaryColor_2);
 
-  --beforeClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #f1d2a9);
-  --beforeClassColor: #382703;
-  --beforeClassBorderColor: #af7c4c;
-
+  /* message */
   --messageBg: #8eeb8e;
-  --messageColor: #023302;
+  --messageColor: #073107;
   --messageBorderColor: #61c469;
 
+  /* weekendd */
   --weekendBg: linear-gradient(135deg, var(--primaryColor_1), 75%, var(--messageBg));
   --weekendColor: var(--messageColor);
   --weekendBorderColor: var(--messageBorderColor);
 
+  /* before class */
+  --beforeClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #f1d2a9);
+  --beforeClassColor: #b95711;
+  --beforeClassBorderColor: #f97316;
+
+  /* after class */
   --afterClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, var(--messageBg));
   --afterClassColor: var(--messageColor);
   --afterClassBorderColor: var(--messageBorderColor);
 
+  /* break */
   --breakBg: linear-gradient(135deg, var(--primaryColor_1), 75%, var(--messageBg));
   --breakColor: var(--messageColor);
   --breakBorderColor: var(--messageBorderColor);
 
+  /* lesson */
   --lessonBorderColor: var(--primaryColor_2);
   --lessonBg: var(--primaryColor_1);
 
   --lessonDetailsBorderColor: var(--primaryColor_3);
   --lessonDetailsTimeBorderColor: var(--primaryColor_3);
-  --lessonTimerBorderColor: var(--primaryColor_3);
 
+  --lessonTimerColor: #b12525;
+  --lessonTimerBG: #ffdddd;
+
+  --lessonLineBgDefault: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  --lessonLineBGCompleted: #9ca3af;
+  --lessonLineBgCurrent: #10b981;
+  --lessonLineCurrentShadow: #10b9814d;
+
+  /* theme */
   --themeBg: var(--primaryColor_1);
   --themeButtonBg: var(--primaryColor_1);
   --themeMenuBg: #0002;
@@ -93,16 +111,24 @@ button:disabled {
 
   --bodyBackground: #07101b;
 
-  --buttonInitBorderColor: rgb(180, 180, 180);
+  --buttonInitBorderColor: #b4b4b4;
 
   --weekendBg: var(--messageBg);
   --afterClassBg: var(--messageBg);
   --breakBg: var(--messageBg);
 
-  --buttonDisabledBorderColor: rgb(190, 190, 190);
-  --buttonDisabledColor: rgb(138, 138, 138);
+  --buttonDisabledBorderColor: #bebebe;
+  --buttonDisabledColor: #8a8a8a;
 
-  --headerBetaBgColor: rgb(170, 235, 235);
+  --headerBetaBgColor: #aaebeb;
+
+  --lessonTimerColor: var(--primaryColor_1);
+  --lessonTimerBG: var(--primaryColor_4);
+
+  --lessonLineBgDefault: linear-gradient(to bottom, #3b82f6, var(--headerBetaBgColor));
+  --lessonLineBGCompleted: #9ca3af;
+  --lessonLineBgCurrent: #dcffdb;
+  --lessonLineCurrentShadow: #e5ffe54d;
 
   --beforeClassBg: linear-gradient(135deg, var(--primaryColor_2), 75%, var(--primaryColor_1));
   --beforeClassColor: var(--primaryColor_4);
@@ -116,10 +142,10 @@ button:disabled {
 }
 
 .colors_pink {
-  --primaryColor_1: #fff0f6;   /* очень светлый розовый фон */
-  --primaryColor_2: #ffb6c1;   /* розовый для границ и второстепенных элементов */
-  --primaryColor_3: #ff69b4;   /* ярко-розовый акцент */
-  --primaryColor_4: #4a0033;   /* тёмный бордово-розовый для текста */
+  --primaryColor_1: #fff0f6;
+  --primaryColor_2: #ffb6c1;
+  --primaryColor_3: #ff69b4;
+  --primaryColor_4: #4a0033;
 
   --bodyBackground: #fff5fa;
 
@@ -163,7 +189,14 @@ button:disabled {
 
   --lessonDetailsBorderColor: var(--primaryColor_3);
   --lessonDetailsTimeBorderColor: var(--primaryColor_3);
-  --lessonTimerBorderColor: var(--primaryColor_3);
+
+  --lessonTimerColor: var(--primaryColor_1);
+  --lessonTimerBG: var(--primaryColor_3);
+
+  --lessonLineBgDefault: linear-gradient(to bottom, #fac0c0, #e46b6b);
+  --lessonLineBGCompleted: #8d717f;
+   --lessonLineBgCurrent: #f398c5;
+  --lessonLineCurrentShadow: #f5bbd8;
 
   --themeBg: var(--primaryColor_1);
   --themeButtonBg: var(--primaryColor_1);
@@ -171,67 +204,11 @@ button:disabled {
   --themeBorderColor: var(--primaryColor_2);
 }
 
-.colors_pastel {
-  --primaryColor_1: #fefefe;     /* почти белый */
-  --primaryColor_2: #d6f0e9;     /* мятный пастель */
-  --primaryColor_3: #a5c8e1;     /* небесно-голубой акцент */
-  --primaryColor_4: #4b4b4b;     /* мягкий тёмно-серый для текста */
-
-  --bodyBackground: #fdfdfc;
-
-  --buttonInitBgColor: var(--primaryColor_1);
-  --buttonInitBorderColor: #bcded3;
-
-  --buttonDisabledBorderColor: #c7dbe0;
-  --buttonDisabledColor: #7a8b8f;
-  --buttonDisabledBgColor: var(--primaryColor_2);
-
-  --headerBg: var(--primaryColor_1);
-  --headerBorderColor: var(--primaryColor_2);
-  --headerBetaBgColor: #ffb685;  /* персиковый акцент */
-  --headerBetaColor: white;
-
-  --completeLessonsBg: var(--primaryColor_2);
-  --completeLessonsListBg: var(--primaryColor_2);
-
-  --beforeClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #ffe7d9);
-  --beforeClassColor: #5c4033;
-  --beforeClassBorderColor: #ffb685;
-
-  --messageBg: #e6f7f2;
-  --messageColor: #204f44;
-  --messageBorderColor: #a5c8e1;
-
-  --weekendBg: linear-gradient(135deg, var(--primaryColor_1), 75%, var(--messageBg));
-  --weekendColor: var(--messageColor);
-  --weekendBorderColor: var(--messageBorderColor);
-
-  --afterClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, var(--messageBg));
-  --afterClassColor: var(--messageColor);
-  --afterClassBorderColor: var(--messageBorderColor);
-
-  --breakBg: var(--messageBg);
-  --breakColor: var(--messageColor);
-  --breakBorderColor: var(--messageBorderColor);
-
-  --lessonBorderColor: var(--primaryColor_2);
-  --lessonBg: var(--primaryColor_1);
-
-  --lessonDetailsBorderColor: var(--primaryColor_3);
-  --lessonDetailsTimeBorderColor: var(--primaryColor_3);
-  --lessonTimerBorderColor: var(--primaryColor_3);
-
-  --themeBg: var(--primaryColor_1);
-  --themeButtonBg: var(--primaryColor_1);
-  --themeMenuBg: #a5c8e122;
-  --themeBorderColor: var(--primaryColor_2);
-}
-
 .colors_space {
-  --primaryColor_1: #0d0d1a;   /* почти чёрный, фон */
-  --primaryColor_2: #2a2a40;   /* тёмно-синий/фиолетовый */
-  --primaryColor_3: #6a5acd;   /* космический фиолетовый */
-  --primaryColor_4: #f5f5f5;   /* светлый текст */
+  --primaryColor_1: #0d0d1a;
+  --primaryColor_2: #2a2a40;
+  --primaryColor_3: #6a5acd;
+  --primaryColor_4: #f5f5f5;
 
   --bodyBackground: radial-gradient(circle at top, #1a1a2e, #0d0d1a);
 
@@ -244,7 +221,7 @@ button:disabled {
 
   --headerBg: var(--primaryColor_2);
   --headerBorderColor: #3c3c55;
-  --headerBetaBgColor: #ffcc00;   /* звёздный жёлтый акцент */
+  --headerBetaBgColor: #ffcc00;
   --headerBetaColor: black;
 
   --completeLessonsBg: var(--primaryColor_2);
@@ -275,66 +252,12 @@ button:disabled {
 
   --lessonDetailsBorderColor: var(--primaryColor_3);
   --lessonDetailsTimeBorderColor: var(--primaryColor_3);
-  --lessonTimerBorderColor: var(--primaryColor_3);
+
+  /* --lessonTimerColor: var(--primaryColor_1); */
+  /* --lessonTimerBG: var(--primaryColor_4); */
 
   --themeBg: var(--primaryColor_1);
   --themeButtonBg: var(--primaryColor_2);
   --themeMenuBg: #6a5acd44;
   --themeBorderColor: var(--primaryColor_3);
-}
-
-.colors_beige_choco {
-  --primaryColor_1: #fffaf2;   /* светлый беж */
-  --primaryColor_2: #e8d7c1;   /* мягкий беж */
-  --primaryColor_3: #9c7e6a;   /* тёплый коричневатый */
-  --primaryColor_4: #3b2f2f;   /* тёмный шоколад */
-
-  --bodyBackground: #f9f5ef;
-
-  --buttonInitBgColor: var(--primaryColor_1);
-  --buttonInitBorderColor: #c9a989;
-
-  --buttonDisabledBorderColor: #bfa98c;
-  --buttonDisabledColor: #8c6b50;
-  --buttonDisabledBgColor: var(--primaryColor_2);
-
-  --headerBg: var(--primaryColor_1);
-  --headerBorderColor: var(--primaryColor_2);
-  --headerBetaBgColor: #6f4e37; /* шоколад */
-  --headerBetaColor: var(--primaryColor_1);
-
-  --completeLessonsBg: var(--primaryColor_2);
-  --completeLessonsListBg: var(--primaryColor_2);
-
-  --beforeClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #f0cda2);
-  --beforeClassColor: #3b2f2f;
-  --beforeClassBorderColor: #a8744f;
-
-  --messageBg: #e7f7da;
-  --messageColor: #304f1f;
-  --messageBorderColor: #b4d29f;
-
-  --weekendBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #d8bfa6);
-  --weekendColor: #3b2f2f;
-  --weekendBorderColor: #9c7e6a;
-
-  --afterClassBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #d8bfa6);
-  --afterClassColor: #3b2f2f;
-  --afterClassBorderColor: #9c7e6a;
-
-  --breakBg: linear-gradient(135deg, var(--primaryColor_1), 75%, #d8bfa6);
-  --breakColor: #3b2f2f;
-  --breakBorderColor: #9c7e6a;
-
-  --lessonBorderColor: var(--primaryColor_2);
-  --lessonBg: var(--primaryColor_1);
-
-  --lessonDetailsBorderColor: var(--primaryColor_3);
-  --lessonDetailsTimeBorderColor: var(--primaryColor_3);
-  --lessonTimerBorderColor: var(--primaryColor_3);
-
-  --themeBg: var(--primaryColor_1);
-  --themeButtonBg: #6f4e37; /* шоколадный акцент */
-  --themeMenuBg: #0002;
-  --themeBorderColor: var(--primaryColor_2);
 }

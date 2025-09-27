@@ -30,7 +30,7 @@
   bottom: 6.1rem;
   right: 24px;
   backdrop-filter: blur(10px);
-  border-radius: 5px;
+  border-radius: 10px;
   background: var(--themeMenuBg);
   padding: 10px;
   display: flex;
