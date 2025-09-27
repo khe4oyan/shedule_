@@ -34,7 +34,7 @@ export default function BeforeClass({ startedTime }) {
 
   return (
     <div className={classes.root}>
-      <p className={classes.title}>First lesson started at {startedTime}</p>
+      <p className={classes.title}>Առաջին դասը կսկսվի ժամը {startedTime}-ին </p>
       <p>{timerFormat(timer)}</p>
     </div>
   )

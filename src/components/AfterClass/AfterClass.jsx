@@ -5,7 +5,7 @@ export default function AfterClass() {
   return (
      <div className={classes.root}>
       <div className={classes.message}>
-        There are no more lessons today
+        Այսօր այլևս դասեր չկան
       </div>
     </div>
   )
