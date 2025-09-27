@@ -1,7 +1,7 @@
 git pull
 
 git add .
-git commit -m "Elya update"
+git commit -m "update by my sister"
 git push
 npm run deploy
 
