@@ -5,7 +5,7 @@ export default function Weekend() {
   return (
     <div className={classes.root}>
       <div className={classes.message}>
-        Today is the weekend =)
+        Այսօր ազատ օր է
       </div>
     </div>
   )
