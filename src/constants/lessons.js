@@ -9,6 +9,10 @@ class Lesson {
     this.end = end;
     this.status = statuses.DEFAULT;
   }
+
+  getData() {
+    return this;
+  }
 }
 
 // new Lesson("Dasi anuny", lsarani hamary, "Dasaxos", "Skizb", "Avart"),
