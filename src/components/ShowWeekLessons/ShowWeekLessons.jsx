@@ -21,7 +21,7 @@ export default function ShowWeekLessons() {
 
   const [dayscheduleNum, setDayscheduleNum] = useState(initState);
 
-  const days = ["Երկ", "Երեք", "Չորք", "Հինգ", "Ուրբ"];
+  const days = ["Երկ", "Երեք", "Չորք", "Հինգ", "Ուրբ", "Շաբ"];
 
   return (
     <div className={classes.root}>
