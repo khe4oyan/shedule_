@@ -39,45 +39,63 @@ export default function Lesson({ data }) {
   useEffect(() => {
     if (timer === null) { return; }
 
-    interval.current = setInterval(() => {
+    interval.current = setTimeout(() => {
       setTimer(prev => prev - 1)
     }, 1000);
 
+    window.addEventListener("focus", () => {
+      const currentDate = new Date();
+      const currentTime = currentDate.getTime();
+      const endTime = getDateTime(end);
+      const newTimer = Math.floor((endTime - currentTime) / 1000);
+      
+      setTimer(newTimer);
+    });
+
     return () => {
-      clearInterval(interval.current);
+      clearTimeout(interval.current);
     }
   }, []);
 
   useEffect(() => {
     if (timer < 1) {
-      clearInterval(interval.current);
+      clearTimeout(interval.current);
+    } else {
+      interval.current = setTimeout(() => {
+        setTimer(prev => prev - 1)
+      }, 1000);
+    }
+
+    return () => {
+      clearTimeout(interval.current);
     }
   }, [timer]);
 
   return (
     <div className={`${classes.root} ${status === statuses.CURRENT && classes.rootCurrent} ${status === statuses.COMPLETED && classes.rootCompleted}`}>
-      <div className={classes.mainInfo}>
+      <div className={`${classes.mainInfo} ${status === statuses.CURRENT && classes.mainInfoExtend}`}>
         <p className={classes.title}>{title}</p>
+        {
+          status === statuses.CURRENT &&
+          <p className={classes.timer}>
+            {timerFormat(timer)}
+          </p>
+        }
       </div>
 
-      <div className={classes.details}>
+      <div className={classes.teacher}>
         <p>{teacher}</p>
+      </div>
+
+      <div className={classes.room}>
         <p>{room}</p>
       </div>
 
       <div className={classes.time}>
-        <p>start</p>
-        <p>end</p>
-        <p>{start}</p>
-        <p>{end}</p>
+        <p>{start} - {end}</p>
       </div>
 
-      {
-        status === statuses.CURRENT &&
-        <div className={classes.timer}>
-          {timerFormat(timer)}
-        </div>
-      }
+      <div className={classes.line}></div>
     </div>
   )
 }

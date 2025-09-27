@@ -1,77 +1,80 @@
-.root { 
+.root {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas: 
-    "top top"
-    "left right";
+  grid-template-areas:
+    "header header"
+    "teacher teacher"
+    "room time";
   gap: 5px;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 10px;
   border: 1px solid var(--lessonBorderColor);
+  border-right: none;
   background: var(--lessonBg);
+  position: relative;
+  overflow: hidden;
 }
 
 .rootCurrent {
-  grid-template-areas: 
-    "top top"
-    "left right"
-    "bottom bottom";
+  /* box-shadow: 10px 0 25px var(--lessonLineCurrentShadow); */
+
+  .line {
+    background: var(--lessonLineBgCurrent);
+  }
 }
 
-/* .rootCompleted {} */
+.rootCompleted {
+  .line {
+    background: var(--lessonLineBGCompleted);
+  }
+}
 
 .mainInfo {
-  grid-area: top;
-  margin-bottom: 5px;
-  border-bottom: 1px solid var(--lessonBorderColor);
+  grid-area: header;
   padding-bottom: 5px;
-  /* text-wrap: balance; */
+  text-wrap: balance;
+  margin-bottom: 5px;
+}
+
+.mainInfoExtend {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
 }
 
 .title {
   font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.details {
-  grid-area: left;
-}
-
-.time {
-  grid-area: right;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
-  gap: 2px;
-  padding: 5px;
-  border-radius: 3px;
-  border: 1px solid var(--lessonDetailsBorderColor);
-  height: fit-content;
-
-  & > p:nth-child(1),
-  & > p:nth-child(2) {
-    font-weight: bold;
-    border-bottom: 1px dashed var(--lessonDetailsTimeBorderColor);
-    padding-bottom: 5px;
-  }
-
-  & > p:nth-child(3),
-  & > p:nth-child(4) {
-    padding-top: 5px;
-  }
-
-  & > p:nth-child(1),
-  & > p:nth-child(3) {
-    padding-right: 5px;
-  }
+  font-size: 1.25rem;
 }
 
 .timer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 0 5px;
-  margin-top: 5px;
-  grid-area: bottom;
-  border-top: 1px dashed var(--lessonTimerBorderColor);
+  width: fit-content;
+  height: fit-content;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--lessonTimerColor);
+  background: var(--lessonTimerBG);
+}
+
+.teacher {
+  grid-area: teacher;
+  margin-bottom: 15px;
+}
+
+.room {
+  grid-area: room;
+}
+
+.time {
+  grid-area: time;
+  text-align: right;
+}
+
+.line {
+  height: 100%;
+  width: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--lessonLineBgDefault);
 }
